@@ -18,7 +18,7 @@
 // const area = calcArea(5);
 // console.log(area);
 
-//CALL BACK FUNCTION
+//CALL BACK FUNCTION............................................................................................................................
 // let people = ['ebuka','mario', 'nonso', 'ifeanyi', 'obi'];
 
 // people.forEach(function(person, index){
@@ -98,10 +98,9 @@
 // THE DOCUMENT OBJECT MODEL...........................................................................................................................................................
 
 
-// const first = document.querySelector('.jack');
-
-// first.innerHTML += 'PRODUCE MODEL'
-// const hello = document.querySelector('.jack');
+const first = document.querySelector('.jack');
+first.style.color = 'red';
+first.innerHTML += 'PRODUCE MODEL'
 
 // const peoples = ['ifeoma', 'Table', 'simon', 'ben', 'ken'];
 
@@ -117,41 +116,98 @@
 
 // home.innerText = 'The other website to visit';
 
-const test = document.querySelector('.jack');
-console.log(test);
+// const test = document.querySelector('.jack');
+// console.log(test);
 
-test.style.color ='blue';
-test.style.margin = '50px';
-test.style.fontSize = '80px';
+// test.style.color ='blue';
+// test.style.margin = '50px';
+// test.style.fontSize = '80px';
 
 
-const bulb = document.querySelectorAll('p');
-bulb.forEach(p => {
-    if (p.textContent.includes('hire')) {
-        p.classList.add('hire');
+// const bulb = document.querySelectorAll('p');
+// bulb.forEach(p => {
+//     if (p.textContent.includes('hire')) {
+//         p.classList.add('hire');
+//     }
+//     if(p.textContent.includes('create')){
+//         p.classList.add('create')
+//     };
+// });
+
+
+// const items  = document.querySelectorAll('li');
+
+// items.forEach(items => {
+//     items.addEventListener('click', (e) =>{
+//         // console.log(items);
+//         // console.log(e.target);
+//         e.target.remove();
+//     });
+// });
+// const ul = document.querySelector('ul');
+
+// const button = document.querySelector('button')
+
+// button.addEventListener('click', () =>{
+//     const li = document.createElement('li');
+//     li.textContent = 'add more';
+//     ul.append(li);
+
+// });
+
+
+const btn = document.querySelector('.btn');
+const popup = document.querySelector('.popup');
+const end = document.querySelector('.popupclose');
+const pop = document.querySelector('.pop');
+
+btn.addEventListener('click', () =>{
+    popup.style.display = 'block';
+});
+end.addEventListener('click', () =>{
+    popup.style.display = 'none';
+});
+
+pop.addEventListener('click', () =>{
+    popup.style.display = 'none';
+});
+popup.addEventListener('click', () =>{
+    popup.style.display = 'block';
+});
+
+const log = document.querySelector('.log-in');
+const username = document.querySelector('#username');
+
+const password = document.querySelector('#password');
+const pattern = /^[a-z]{12,}$/;
+
+log.addEventListener('submit', (e) =>{
+    e.preventDefault();
+console.log(log.username.value)
+ });
+
+
+
+log.addEventListener('submit', (e) =>{
+
+
+const username = log.username.value;
+
+ const feedback = document.querySelector('.feedback')
+ 
+ if (pattern.test(username)) {
+    feedback.textContent = 'The username is strong';
+ }else{
+    feedback.textContent = 'The username is weak';
+ } 
+});
+
+log.username.addEventListener('keyup', (e) =>{
+    if (pattern.test(e.target.value)) {
+        log.username.setAttribute('class', 'success')
+    }else{
+        log.username.setAttribute('class', 'error')
     }
-    if(p.textContent.includes('create')){
-        p.classList.add('create')
-    };
 });
 
 
-const items  = document.querySelectorAll('li');
-
-items.forEach(items => {
-    items.addEventListener('click', (e) =>{
-        // console.log(items);
-        // console.log(e.target);
-        e.target.remove();
-    });
-});
-const ul = document.querySelector('ul');
-
-const button = document.querySelector('button')
-
-button.addEventListener('click', () =>{
-    const li = document.createElement('li');
-    li.textContent = 'add more';
-    ul.append(li);
-
-});
