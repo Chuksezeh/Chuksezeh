@@ -78,40 +78,88 @@
 // console.log(callNum);
 
 //SORTING STRING AND NUMBERS........................................................................................................
-const names = ['uche', 'emy', 'okeke', 'udom', 'ikechukwu', 'zion'];
-names.sort();
-//names.reverse();
+// const names = ['uche', 'emy', 'okeke', 'udom', 'ikechukwu', 'zion'];
+// names.sort();
+// //names.reverse();
 
 
-console.log(names);
+// console.log(names);
 
-const number = [20, 12,5,9,18,30,50,56,29,30,45,87,45];
-number.sort();
-number.sort((a,b) => a - b);
+// const number = [20, 12,5,9,18,30,50,56,29,30,45,87,45];
+// number.sort();
+// number.sort((a,b) => a - b);
 
-console.log(number);
+// console.log(number);
 
-const players = [
-    {name: 'mike', mark: 49},
-    {name: 'king', mark: 89},
-    {name: 'kiade', mark: 40},
-    {name: 'giome', mark: 90},
-    {name: 'hele', mark: 30},
-    {name: 'yuoj', mark: 55},
-    {name: 'genea', mark: 49},
-    {name: 'chidi', mark: 30},
-    {name: 'umana', mark: 38},
-    {name: 'takio', mark: 17},
+// const players = [
+//     {name: 'mike', mark: 49},
+//     {name: 'king', mark: 89},
+//     {name: 'kiade', mark: 40},
+//     {name: 'giome', mark: 90},
+//     {name: 'hele', mark: 30},
+//     {name: 'yuoj', mark: 55},
+//     {name: 'genea', mark: 49},
+//     {name: 'chidi', mark: 30},
+//     {name: 'umana', mark: 38},
+//     {name: 'takio', mark: 17},
 
+// ];
+// players.sort((a,b) =>{
+//     if (a.score > b.score) {
+//         return -1;
+//     }else if (b.score > a.score) {
+//         return 1;
+//     }else{
+//  return 0;
+//     }
+// });
+
+// console.log(players);
+let upload = document.querySelector('.upload');
+let tent = document.querySelector('.tent');
+let table = document.querySelector('tr')
+
+const products = [
+    {name: 'mike', price: 49},
+    {name: 'king', price: 89},
+    {name: 'kiade', price: 40},
+    {name: 'giome', price: 90},
+    {name: 'hele', price: 30},
+    {name: 'yuoj', price: 55},
+    {name: 'genea', price: 49},
 ];
-players.sort((a,b) =>{
-    if (a.score > b.score) {
-        return -1;
-    }else if (b.score > a.score) {
-        return 1;
-    }else{
- return 0;
-    }
-});
+const filtered = products.filter( name => name.price > 20);
 
-console.log(players);
+// products.forEach(prod => {
+
+//     console.log('prod=>>>', prod);
+//     tent.innerHTML += `
+//             <tr>
+//               <td>${prod.name}</td>
+//               <td>${prod.price}</td>
+            
+//             </tr>`
+// })
+
+
+// const promos = products
+//  .filter(product => product.price > 20)
+//  .map(product => `the ${product.name} is ${product.price /2} naira`);
+// console.log(promos);
+upload.addEventListener('click', () =>{
+    // console.log(tent.innerHTML);
+        products.forEach(prod => {
+            tent.innerHTML += `
+            <tr>
+              <td>${prod.name}</td>
+              <td>${prod.price}</td>
+            
+            </tr>`
+       
+        
+        
+    });
+        
+    
+});
+console.log('products', products);
